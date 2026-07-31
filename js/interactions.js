@@ -1,4 +1,5 @@
 import {
+  stage,
   canvas,
   symmetryInput,
   brushInput,
@@ -9,7 +10,7 @@ import {
   clearBtn,
   saveBtn,
 } from "./dom.js";
-import { fillBackground, getPos, drawSegment } from "./canvas.js";
+import { fillBackground, getPos, drawSegment, currentColor } from "./canvas.js";
 
 let drawing = false;
 let lastPoint = null;
@@ -17,7 +18,13 @@ let lastPoint = null;
 function pointerDown(e) {
   drawing = true;
   lastPoint = getPos(e);
-  canvas.setPointerCapture(e.pointerId);
+  try {
+    canvas.setPointerCapture(e.pointerId);
+  } catch (err) {
+    /* no active pointer to capture, safe to ignore */
+  }
+  stage.style.setProperty("--glow-color", currentColor());
+  stage.classList.add("drawing");
 }
 
 function pointerMove(e) {
@@ -25,11 +32,13 @@ function pointerMove(e) {
   const point = getPos(e);
   drawSegment(lastPoint, point);
   lastPoint = point;
+  stage.style.setProperty("--glow-color", currentColor());
 }
 
 function pointerUp() {
   drawing = false;
   lastPoint = null;
+  stage.classList.remove("drawing");
 }
 
 canvas.addEventListener("pointerdown", pointerDown);

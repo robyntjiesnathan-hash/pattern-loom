@@ -6,6 +6,20 @@
   overflow: hidden;
   box-shadow: var(--shadow);
   background: var(--canvas-bg);
+  --glow-color: var(--accent);
+}
+
+.stage.drawing {
+  animation: stageGlow 1.4s ease-in-out infinite;
+}
+
+@keyframes stageGlow {
+  0%, 100% {
+    box-shadow: var(--shadow), 0 0 12px 0 color-mix(in srgb, var(--glow-color) 45%, transparent);
+  }
+  50% {
+    box-shadow: var(--shadow), 0 0 42px 10px color-mix(in srgb, var(--glow-color) 65%, transparent);
+  }
 }
 
 #canvas {

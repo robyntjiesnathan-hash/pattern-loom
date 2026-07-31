@@ -47,7 +47,7 @@ function rotatePoint(p, angle, flip) {
   };
 }
 
-function currentColor() {
+export function currentColor() {
   const hue = rainbowInput.checked ? rainbowHue : Number(hueInput.value);
   return `hsl(${hue}, 85%, 62%)`;
 }
