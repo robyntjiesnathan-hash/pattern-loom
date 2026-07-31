@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pattern Loom</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Pattern Loom</h1>
+    <p class="subtitle">Draw anywhere in the circle — it weaves into a symmetric pattern.</p>
+
+    <div class="stage">
+      <canvas id="canvas" width="640" height="640"></canvas>
+    </div>
+
+    <section class="controls">
+      <div class="control">
+        <label for="symmetry">Symmetry <span id="symmetryVal">10</span></label>
+        <input type="range" id="symmetry" min="2" max="24" value="10" step="1">
+      </div>
+
+      <div class="control">
+        <label for="brush">Brush size <span id="brushVal">4</span></label>
+        <input type="range" id="brush" min="1" max="24" value="4" step="1">
+      </div>
+
+      <div class="control">
+        <label for="hue">Hue <span id="hueVal">280</span></label>
+        <input type="range" id="hue" min="0" max="360" value="280" step="1">
+      </div>
+
+      <div class="control toggles">
+        <label class="switch">
+          <input type="checkbox" id="mirror" checked>
+          <span>Mirror</span>
+        </label>
+        <label class="switch">
+          <input type="checkbox" id="rainbow">
+          <span>Rainbow</span>
+        </label>
+        <label class="switch">
+          <input type="checkbox" id="glow" checked>
+          <span>Glow</span>
+        </label>
+      </div>
+
+      <div class="buttons">
+        <button id="clear">Clear</button>
+        <button id="save" class="primary">Save PNG</button>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
