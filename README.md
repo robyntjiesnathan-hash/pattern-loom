@@ -3,6 +3,7 @@
 A minimal, browser-based kaleidoscope drawing toy. No build step, no dependencies — just open it and start drawing.
 
 Repository: https://github.com/robyntjiesnathan-hash/pattern-loom
+Live: https://robyntjiesnathan-hash.github.io/pattern-loom/
 
 ## Features
 
