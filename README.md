@@ -2,6 +2,8 @@
 
 A minimal, browser-based kaleidoscope drawing toy. No build step, no dependencies — just open it and start drawing.
 
+Repository: https://github.com/robyntjiesnathan-hash/pattern-loom
+
 ## Features
 
 - **Radial symmetry** — draw once, see it repeated 2–24 times around the center
